@@ -7,7 +7,7 @@ import wordle.interfaces.ITeclado;
 import java.util.Scanner;
 
 /**
- *
+ *clase para modelar la lectura en consola
  * @author molguin
  */
 public class TecladoConsola implements ITeclado {

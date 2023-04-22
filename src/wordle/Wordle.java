@@ -23,7 +23,7 @@ public class Wordle {
     public static void main(String[] args) throws Exception {
         ITablero tablero = new TableroConsola();
         ITeclado teclado = new TecladoConsola();
-        JuegoWordle juego = new JuegoWordle(tablero, teclado);
+        JuegoWordle juego = new JuegoWordle(tablero, teclado,6);//representa el inicio del juego
         juego.jugar();
     }
     

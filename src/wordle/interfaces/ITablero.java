@@ -12,7 +12,7 @@ import wordle.Letra;
  *
  * @author molguin
  */
-public interface ITablero {
+public interface ITablero {//interface para el despliuegue del tablero
     
     public void despliegaPrincipio();
     public void despliegaEstado(ArrayList<Letra> letras,ArrayList<Intento> intentos);
