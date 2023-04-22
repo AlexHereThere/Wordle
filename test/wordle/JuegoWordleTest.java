@@ -46,18 +46,14 @@ public class JuegoWordleTest {
 
     /**
      * Test of jugar method, of class JuegoWordle.
+     * @throws
      */
     @Test
-    public void testJugar() throws Exception {
+    public void testJugar() throws Exception{
         System.out.println("jugar");
         ITablero tablero = new TableroConsola();
         ITeclado teclado = new TecladoConsola();
-        JuegoWordle instance = new JuegoWordle(tablero,teclado);
+        JuegoWordle instance = new JuegoWordle(tablero,teclado,6);
         assertNotNull(instance);
     }
-
-  
-
-   
-    
 }

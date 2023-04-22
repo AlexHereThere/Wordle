@@ -17,7 +17,7 @@ public class DiccionarioPalabrasDe5Letras {
     ArrayList<String> palabras;
     
     /**
-     *constructor
+     *constructor, aqui se saca todas las palabras del juego, a partir de un  documento texto y los guarda en un arraylist
      * @throws Exception
      */
     public DiccionarioPalabrasDe5Letras() throws Exception

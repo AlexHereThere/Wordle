@@ -5,7 +5,7 @@
 package wordle;
 
 /**
- *
+ *Modela las letras que se presentan
  * @author ACR
  */
 public class Letra {

@@ -12,7 +12,7 @@ import wordle.Letra;
 import wordle.interfaces.ITablero;
 
 /**
- *
+ *clase para modelar el despliegue en consola
  * @author molguin
  */
 public class TableroConsola implements ITablero {

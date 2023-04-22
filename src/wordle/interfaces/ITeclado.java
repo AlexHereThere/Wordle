@@ -8,6 +8,6 @@ package wordle.interfaces;
  *
  * @author molguin
  */
-public interface ITeclado {
+public interface ITeclado {// inteface para la lectura
     public String getIntento();
 }
