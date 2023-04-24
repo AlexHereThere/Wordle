@@ -46,7 +46,6 @@ public class WordleTest {
     @Test
     public void testMain() throws Exception {
         System.out.println("main");
-        String[] args = null;
         Wordle wordle=new Wordle();
         assertNotNull(wordle);
     }

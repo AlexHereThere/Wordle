@@ -64,7 +64,7 @@ public class ITableroTest {
         ArrayList<Letra> letras = null;
         ArrayList<Intento> intentos = null;
         ITablero instance = new ITableroImpl();
-        instance.despliegaEstado(letras, intentos);
+        instance.despliegaEstado(letras, intentos,6,5);
         assertNotNull(instance);
     }
 
@@ -79,6 +79,19 @@ public class ITableroTest {
         instance.despliegaIntento(palabra);
         assertNotNull(instance);
     }
+    
+    /**
+     * Test of despliegaFin method, of class ITablero.
+     */
+    @Test
+    public void testDespliegaFin() {
+        System.out.println("despliegaFin");
+        boolean caso = false;
+        String Correcto = "";
+        ITablero instance = new ITableroImpl();
+        instance.despliegaFin(caso, Correcto);
+        assertNotNull(instance);
+    }
 
     public class ITableroImpl implements ITablero {
 
@@ -87,12 +100,60 @@ public class ITableroTest {
         }
 
         @Override
-        public void despliegaEstado(ArrayList<Letra> letras, ArrayList<Intento> intentos) {
+        public void despliegaEstado(ArrayList<Letra> letras, ArrayList<Intento> intentos, int numeroDeIntentos, int TamanoDePalabra) {
         }
 
         @Override
         public void despliegaIntento(String palabra) {
         }
+
+        @Override
+        public void despliegaFin(boolean caso, String Correcto) {
+        }
+    }    
+
+    public class ITableroImpl implements ITablero {
+
+        public void despliegaPrincipio() {
+        }
+
+        public void despliegaEstado(ArrayList<Letra> letras, ArrayList<Intento> intentos, int numeroDeIntentos, int TamanoDePalabra) {
+        }
+
+        public void despliegaIntento(String palabra) {
+        }
+
+        public void despliegaFin(boolean caso, String Correcto) {
+        }
     }
-    
+
+    public class ITableroImpl implements ITablero {
+
+        public void despliegaPrincipio() {
+        }
+
+        public void despliegaEstado(ArrayList<Letra> letras, ArrayList<Intento> intentos, int numeroDeIntentos, int TamanoDePalabra) {
+        }
+
+        public void despliegaIntento(String palabra) {
+        }
+
+        public void despliegaFin(boolean caso, String Correcto) {
+        }
+    }
+
+    public class ITableroImpl implements ITablero {
+
+        public void despliegaPrincipio() {
+        }
+
+        public void despliegaEstado(ArrayList<Letra> letras, ArrayList<Intento> intentos, int numeroDeIntentos, int TamanoDePalabra) {
+        }
+
+        public void despliegaIntento(String palabra) {
+        }
+
+        public void despliegaFin(boolean caso, String Correcto) {
+        }
+    }
 }

@@ -49,7 +49,6 @@ public class ITecladoTest {
         System.out.println("getIntento");
         ITeclado instance = new ITecladoImpl();
             assertNotNull(instance);
-       
     }
 
     public class ITecladoImpl implements ITeclado {
@@ -58,6 +57,26 @@ public class ITecladoTest {
         public String getIntento() {
             return "";
         }
+    } 
+
+    public class ITecladoImpl implements ITeclado {
+
+        public String getIntento() {
+            return "";
+        }
     }
-    
+
+    public class ITecladoImpl implements ITeclado {
+
+        public String getIntento() {
+            return "";
+        }
+    }
+
+    public class ITecladoImpl implements ITeclado {
+
+        public String getIntento() {
+            return "";
+        }
+    }
 }

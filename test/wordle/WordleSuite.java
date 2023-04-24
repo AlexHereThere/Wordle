@@ -10,13 +10,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import wordle.consola.ConsolaSuite;
+import wordle.holografico.HolograficoSuite;
+import wordle.interfaces.InterfacesSuite;
 
 /**
  *
  * @author 01806
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({wordle.JuegoWordleTest.class, wordle.IntentoTest.class, wordle.holografico.HolograficoSuite.class, wordle.consola.ConsolaSuite.class, wordle.LetraTest.class, wordle.interfaces.InterfacesSuite.class, wordle.WordleTest.class, wordle.DiccionarioPalabrasDe5LetrasTest.class})
+@Suite.SuiteClasses({CanvasTest.class, JuegoWordleTest.class, IntentoTest.class, HolograficoSuite.class, ConsolaSuite.class, LetraTest.class, InterfacesSuite.class, WordleTest.class, DiccionarioPalabrasDe5LetrasTest.class})
 public class WordleSuite {
 
       @BeforeClass

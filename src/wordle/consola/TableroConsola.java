@@ -31,7 +31,7 @@ public class TableroConsola implements ITablero {
     }
 
     @Override
-    public void despliegaEstado(ArrayList<Letra> letras,ArrayList<Intento> intentos) 
+    public void despliegaEstado(ArrayList<Letra> letras,ArrayList<Intento> intentos,int NumeroDeIntentos,int tamanoDePalabra) 
     {
         Iterator<Intento> it=intentos.iterator();
          for(int i=0;i<6;i++)
@@ -41,6 +41,15 @@ public class TableroConsola implements ITablero {
          }
        
         for(Letra letra:letras)System.out.print(letra);System.out.print("\n"); 
+    
     }
+
+    @Override
+    public void despliegaFin(boolean caso,String correcto) {
+                if(caso==true) System.out.println("FELICIDADES ");
+        else System.out.println("La Palabra era "+correcto+"...");
+      
+    }
+    
     }
     

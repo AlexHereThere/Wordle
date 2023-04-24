@@ -75,8 +75,20 @@ public class TableroConsolaTest {
         ArrayList<Letra> letras = new ArrayList<>();
         ArrayList<Intento> intentos =new ArrayList<>();
         TableroConsola instance = new TableroConsola();
-        instance.despliegaEstado(letras, intentos);
+        instance.despliegaEstado(letras, intentos,6,5);
          assertNotNull(instance);
     }
-    
+
+    /**
+     * Test of despliegaFin method, of class TableroConsola.
+     */
+    @Test
+    public void testDespliegaFin() {
+        System.out.println("despliegaFin");
+        boolean caso = false;
+        String correcto = "";
+        TableroConsola instance = new TableroConsola();
+        instance.despliegaFin(caso, correcto);
+        assertNotNull(instance);
+    } 
 }

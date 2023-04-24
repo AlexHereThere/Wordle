@@ -59,7 +59,6 @@ public class DiccionarioPalabrasDe5LetrasTest {
     public void testDarPalabraAleatoria() throws Exception {
         System.out.println("darPalabraAleatoria");
         DiccionarioPalabrasDe5Letras instance = new DiccionarioPalabrasDe5Letras();
-        String expResult = "";
         String result = instance.darPalabraAleatoria();
         assertNotNull(result);
     }

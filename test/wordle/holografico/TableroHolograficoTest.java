@@ -64,7 +64,7 @@ public class TableroHolograficoTest {
         ArrayList<Letra> letras = new ArrayList<>();
         ArrayList<Intento> intentos = new ArrayList<>();
         TableroHolografico instance = new TableroHolografico();
-        instance.despliegaEstado(letras, intentos);
+        instance.despliegaEstado(letras, intentos,6,5);
         assertNotNull(instance);
     }
 
@@ -77,6 +77,19 @@ public class TableroHolograficoTest {
         TableroHolografico instance = new TableroHolografico();
         instance.despliegaPrincipio();
         assertNotNull(instance);
+    }
+
+    /**
+     * Test of despliegaFin method, of class TableroHolografico.
+     */
+    @Test
+    public void testDespliegaFin() {
+        System.out.println("despliegaFin");
+        boolean caso = false;
+        String correcto = "";
+        TableroHolografico instance = new TableroHolografico();
+        instance.despliegaFin(caso, correcto);
+       assertNotNull(instance);
     }
     
 }

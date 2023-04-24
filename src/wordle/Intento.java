@@ -40,22 +40,26 @@ public class Intento {
  }
  /*
  para revisar cuantas letras estab bien ubicadas, cuantas no y las que no estan
- tambien anuncia si se encontro la palabra oh no
+ tambien indica si se encontro la palabra oh no
  */
  private void revisarIntento()
  {
+     if(palabra.length()==palabra_correcta.length())//debe ser la misma longitud para considerar intento
+     {
      int numeroDeCorrectos=0;
+     for(int i=0;i<palabra_correcta.length();i++) letras[i].SetLetra(palabra.charAt(i));//se llena letras con la palabra
       for(int i=0;i<palabra_correcta.length();i++)//esto se hace para cada letra en la palabra dada y palabra correcta
      {
-     letras[i].SetLetra(palabra.charAt(i));
       if(letras[i].getLetra()==palabra_correcta.charAt(i)) letras[i].setSignos('(',')');
       else if(estaEnPalabra(letras[i]) && sacarAparicionesEnPalabra(letras[i])<=sacarAparicionesEnCorrecto(letras[i])) 
              letras[i].setSignos('[',']'); //si esta la letra en la palabra correcta y no ha sobrepasado el numero de veces que aparece en                                                                                                           
       else letras[i].setSignos('<','>');  // la palabra correcta en este punto, entonces indicalo como [ ].
       
-     if(letras[i].getSignoAntes()=='(' && letras[i].getSignoDespues()==')') numeroDeCorrectos+=1; // cuenta el numero de letras que tienen () 
+      if(letras[i].getSignoAntes()=='(' && letras[i].getSignoDespues()==')') numeroDeCorrectos+=1; // cuenta el numero de letras que tienen () 
      }
      correcto = numeroDeCorrectos==palabra_correcta.length();
+     }
+     //como no se consideran palabras que sean de longitud menor o mayor de 5, va a marcar error
  }
 /*
  verificar si esta la letra en la palabra_correcta
@@ -101,6 +105,19 @@ public class Intento {
  {
  return letras;    
  }
+ /**
+  * metodo especial para el despliegue holografico
+  * @return 
+  */
+ public String getPurasLetras()
+ {
+ String cadena="";
+  for(Letra letra:letras)
+  {
+  cadena+=letra.getLetra()+"    ";
+  }
+  return cadena;
+ }        
  /**
   * regresa la palabra dada
   * @return 

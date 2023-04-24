@@ -15,6 +15,7 @@ import wordle.Letra;
 public interface ITablero {//interface para el despliuegue del tablero
     
     public void despliegaPrincipio();
-    public void despliegaEstado(ArrayList<Letra> letras,ArrayList<Intento> intentos);
+    public void despliegaEstado(ArrayList<Letra> letras,ArrayList<Intento> intentos,int numeroDeIntentos,int TamanoDePalabra);
     public void despliegaIntento(String palabra);    
+    public void despliegaFin(boolean caso,String Correcto);
 }

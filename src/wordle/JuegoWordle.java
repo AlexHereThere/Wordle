@@ -39,18 +39,18 @@ public class JuegoWordle {
     public void jugar(){
         boolean seGano=false;
         tablero.despliegaPrincipio();
+        teclado.getIntento();
         String correcto=dicc.darPalabraAleatoria();
        // System.out.println(correcto);  // es para probar el juego
         Intento.setPalabraCorrecta(correcto);
-        tablero.despliegaEstado(qwerty,intentos);
+        tablero.despliegaEstado(qwerty,intentos,numeroDeIntentos,correcto.length());
         for(int i=0;i<numeroDeIntentos;i++)
         {
-        if(seGano=ronda())break;
-        tablero.despliegaEstado(qwerty,intentos);
+        if(seGano=ronda())break;//si se encontro la palabra, se va hacia el fin
+        tablero.despliegaEstado(qwerty,intentos,numeroDeIntentos,correcto.length());
         }
-        tablero.despliegaEstado(qwerty, intentos);// ultimo despliegue
-        if(seGano==true) System.out.println("FELICIDADES ");
-        else System.out.println("La Palabra era "+correcto+"...");
+        tablero.despliegaEstado(qwerty, intentos,numeroDeIntentos,correcto.length());// ultimo despliegue
+        tablero.despliegaFin(seGano,correcto);//indica resultados
     }
     /**
      * ejecuta todo lo que se hace en una ronda
