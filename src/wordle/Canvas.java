@@ -2,6 +2,8 @@ package wordle;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.geom.*;
 
 /**
@@ -17,11 +19,10 @@ import java.awt.geom.*;
 public final class Canvas
 {
     private JFrame frame;
-    private CanvasPane canvas;
+    public CanvasPane canvas;
     private Graphics2D graphic;
     private Color backgroundColor;
     private Image canvasImage;
-
     /**
      * Create a Canvas with default height, width and background color 
      * (300, 300, white).
@@ -30,6 +31,7 @@ public final class Canvas
     public Canvas(String title)
     {
         this(title, 300, 300, Color.white);
+        canvas.addMouseListener(new MouseAdapter(){});
     }
 
     /**
@@ -60,6 +62,7 @@ public final class Canvas
         backgroundColor = bgColor;
         frame.pack();
         setVisible(true);
+        frame.setLayout(null);
     }
 
     /**
@@ -152,6 +155,7 @@ public final class Canvas
         graphic.fill(new Rectangle(0, 0, size.width, size.height));
         graphic.setColor(original);
         canvas.repaint();
+        
     }
 
     /**
@@ -361,7 +365,15 @@ public final class Canvas
             // ignoring exception at the moment
         }
     }
-
+    
+    /**
+     *
+     * @return
+     */
+    public JFrame getFrame()
+    {
+    return frame;    
+    }
     /************************************************************************
      * Inner class CanvasPane - the actual canvas component contained in the
      * Canvas frame. This is essentially a JPanel with added capability to
@@ -369,9 +381,14 @@ public final class Canvas
      */
     private class CanvasPane extends JPanel
     {
-        public void paint(Graphics g)
+        @Override
+        public void paintComponent(Graphics g)
         {
-            g.drawImage(canvasImage, 0, 0, null);
+            super.paintComponent(g);
+            g.drawImage(canvasImage, 0, 0, this);
         }
+        
+        /**************************************************************
+         */
     }
 }

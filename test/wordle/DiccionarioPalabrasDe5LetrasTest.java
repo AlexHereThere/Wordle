@@ -23,22 +23,18 @@ public class DiccionarioPalabrasDe5LetrasTest {
     
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
     }
     
     @Before
     public void setUp() {
-        System.out.println("ANTES DE METODO->");
     }
     
     @After
     public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
     }
 
     /**
@@ -49,7 +45,8 @@ public class DiccionarioPalabrasDe5LetrasTest {
         System.out.println("getPalabras");
         DiccionarioPalabrasDe5Letras instance = new DiccionarioPalabrasDe5Letras();
         ArrayList<String> result = instance.getPalabras();
-        assertNotNull(result);
+        assertNotNull( result);
+       
     }
 
     /**
@@ -61,6 +58,7 @@ public class DiccionarioPalabrasDe5LetrasTest {
         DiccionarioPalabrasDe5Letras instance = new DiccionarioPalabrasDe5Letras();
         String result = instance.darPalabraAleatoria();
         assertNotNull(result);
+       
     }
     
 }

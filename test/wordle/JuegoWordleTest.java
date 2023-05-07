@@ -24,36 +24,33 @@ public class JuegoWordleTest {
     public JuegoWordleTest() {
     }
     
-       @BeforeClass
+    @BeforeClass
     public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
     }
     
     @Before
     public void setUp() {
-        System.out.println("ANTES DE METODO->");
     }
     
     @After
     public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
     }
 
     /**
      * Test of jugar method, of class JuegoWordle.
-     * @throws
      */
     @Test
-    public void testJugar() throws Exception{
+    public void testJugar() throws Exception {
         System.out.println("jugar");
-        ITablero tablero = new TableroConsola();
+        ITablero tabla = new TableroConsola();
         ITeclado teclado = new TecladoConsola();
-        JuegoWordle instance = new JuegoWordle(tablero,teclado,6);
+        JuegoWordle instance = new JuegoWordle(tabla,teclado,6);
+        //instance.jugar(); ocupa entrada de teclado
         assertNotNull(instance);
     }
+    
 }

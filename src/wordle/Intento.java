@@ -105,19 +105,7 @@ public class Intento {
  {
  return letras;    
  }
- /**
-  * metodo especial para el despliegue holografico
-  * @return 
-  */
- public String getPurasLetras()
- {
- String cadena="";
-  for(Letra letra:letras)
-  {
-  cadena+=letra.getLetra()+"    ";
-  }
-  return cadena;
- }        
+
  /**
   * regresa la palabra dada
   * @return 

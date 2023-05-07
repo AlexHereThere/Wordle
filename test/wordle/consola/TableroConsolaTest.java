@@ -25,22 +25,18 @@ public class TableroConsolaTest {
     
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
     }
     
     @Before
     public void setUp() {
-        System.out.println("ANTES DE METODO->");
     }
     
     @After
     public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
     }
 
     /**
@@ -49,7 +45,7 @@ public class TableroConsolaTest {
     @Test
     public void testDespliegaIntento() {
         System.out.println("despliegaIntento");
-        String palabra = "ARBOL";
+        String palabra = "";
         TableroConsola instance = new TableroConsola();
         instance.despliegaIntento(palabra);
         assertNotNull(instance);
@@ -73,10 +69,12 @@ public class TableroConsolaTest {
     public void testDespliegaEstado() {
         System.out.println("despliegaEstado");
         ArrayList<Letra> letras = new ArrayList<>();
-        ArrayList<Intento> intentos =new ArrayList<>();
+        ArrayList<Intento> intentos = new ArrayList<>();
+        int NumeroDeIntentos = 0;
+        int tamanoDePalabra = 0;
         TableroConsola instance = new TableroConsola();
-        instance.despliegaEstado(letras, intentos,6,5);
-         assertNotNull(instance);
+        instance.despliegaEstado(letras, intentos, NumeroDeIntentos, tamanoDePalabra);
+        assertNotNull(instance);
     }
 
     /**
@@ -90,5 +88,6 @@ public class TableroConsolaTest {
         TableroConsola instance = new TableroConsola();
         instance.despliegaFin(caso, correcto);
         assertNotNull(instance);
-    } 
+    }
+    
 }

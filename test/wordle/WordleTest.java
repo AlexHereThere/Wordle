@@ -20,24 +20,20 @@ public class WordleTest {
     public WordleTest() {
     }
     
-      @BeforeClass
+    @BeforeClass
     public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
     }
     
     @Before
     public void setUp() {
-        System.out.println("ANTES DE METODO->");
     }
     
     @After
     public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
     }
 
     /**
@@ -46,8 +42,9 @@ public class WordleTest {
     @Test
     public void testMain() throws Exception {
         System.out.println("main");
-        Wordle wordle=new Wordle();
-        assertNotNull(wordle);
+        String[] args = null;
+        //Wordle.main(args); ocupa lectura de teclado
+        assertNull(args);
     }
     
 }

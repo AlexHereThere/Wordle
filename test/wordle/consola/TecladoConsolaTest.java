@@ -19,25 +19,21 @@ public class TecladoConsolaTest {
     
     public TecladoConsolaTest() {
     }
-   
+    
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
     }
     
     @Before
     public void setUp() {
-        System.out.println("ANTES DE METODO->");
     }
     
     @After
     public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
     }
 
     /**
@@ -47,8 +43,9 @@ public class TecladoConsolaTest {
     public void testGetIntento() {
         System.out.println("getIntento");
         TecladoConsola instance = new TecladoConsola();
+        //String expResult = "";
+        //String result = instance.getIntento(); //lectura de teclado
         assertNotNull(instance);
-        
     }
     
 }

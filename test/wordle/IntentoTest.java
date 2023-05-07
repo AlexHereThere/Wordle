@@ -6,6 +6,7 @@ package wordle;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -42,10 +43,9 @@ public class IntentoTest {
     @Test
     public void testSetPalabraCorrecta() {
         System.out.println("setPalabraCorrecta");
-        String palabra = "";
+        String palabra = "arbol";
         Intento.setPalabraCorrecta(palabra);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(palabra,Intento.getPalabraCorrecta());
     }
 
     /**
@@ -54,11 +54,11 @@ public class IntentoTest {
     @Test
     public void testGetPalabraCorrecta() {
         System.out.println("getPalabraCorrecta");
-        String expResult = "";
+        String expResult = "arbol";
+        Intento.setPalabraCorrecta(expResult);
         String result = Intento.getPalabraCorrecta();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+         Assert.assertEquals(expResult, result);
+
     }
 
     /**
@@ -67,40 +67,21 @@ public class IntentoTest {
     @Test
     public void testGetLetras() {
         System.out.println("getLetras");
-        Intento instance = null;
-        Letra[] expResult = null;
+        Intento instance = new Intento("arbol");
         Letra[] result = instance.getLetras();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+          Assert.assertArrayEquals(instance.getLetras(), result);
     }
-
-    /**
-     * Test of getPurasLetras method, of class Intento.
-     */
-    @Test
-    public void testGetPurasLetras() {
-        System.out.println("getPurasLetras");
-        Intento instance = null;
-        String expResult = "";
-        String result = instance.getPurasLetras();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
     /**
      * Test of getPalabra method, of class Intento.
      */
     @Test
     public void testGetPalabra() {
         System.out.println("getPalabra");
-        Intento instance = null;
-        String expResult = "";
+        Intento instance = new Intento("arbol");
+        String expResult = "arbol";
         String result = instance.getPalabra();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       Assert.assertEquals(expResult, result);
+       
     }
 
     /**
@@ -109,12 +90,12 @@ public class IntentoTest {
     @Test
     public void testVerSiCorrecto() {
         System.out.println("verSiCorrecto");
-        Intento instance = null;
-        boolean expResult = false;
+         Intento.setPalabraCorrecta("ardor");
+        Intento instance = new Intento("arbol");
+        boolean expResult = false;       
         boolean result = instance.verSiCorrecto();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -123,12 +104,11 @@ public class IntentoTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Intento instance = null;
-        String expResult = "";
+        Intento.setPalabraCorrecta("ARBOL");
+        Intento instance = new Intento("ARBOL");
+        String expResult = "{(A)}{(R)}{(B)}{(O)}{(L)}";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

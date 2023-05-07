@@ -10,36 +10,29 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import wordle.consola.ConsolaSuite;
-import wordle.holografico.HolograficoSuite;
-import wordle.interfaces.InterfacesSuite;
 
 /**
  *
  * @author 01806
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({CanvasTest.class, JuegoWordleTest.class, IntentoTest.class, HolograficoSuite.class, ConsolaSuite.class, LetraTest.class, InterfacesSuite.class, WordleTest.class, DiccionarioPalabrasDe5LetrasTest.class})
+@Suite.SuiteClasses({wordle.CanvasTest.class, wordle.JuegoWordleTest.class, wordle.IntentoTest.class, wordle.holografico.HolograficoSuite.class, wordle.consola.ConsolaSuite.class, wordle.LetraTest.class, wordle.interfaces.InterfacesSuite.class, wordle.WordleTest.class, wordle.DiccionarioPalabrasDe5LetrasTest.class})
 public class WordleSuite {
 
-      @BeforeClass
-    public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
+    @BeforeClass
+    public static void setUpClass() throws Exception {
     }
-    
+
     @AfterClass
-    public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
+    public static void tearDownClass() throws Exception {
     }
-    
+
     @Before
-    public void setUp() {
-        System.out.println("ANTES DE METODO->");
+    public void setUp() throws Exception {
     }
-    
+
     @After
-    public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
+    public void tearDown() throws Exception {
     }
     
 }

@@ -25,24 +25,21 @@ public class CanvasTest {
     
     public CanvasTest() {
     }
-     @BeforeClass
+    
+    @BeforeClass
     public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
     }
     
     @Before
     public void setUp() {
-        System.out.println("ANTES DE METODO->");
     }
     
     @After
     public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
     }
 
     /**
@@ -52,9 +49,9 @@ public class CanvasTest {
     public void testSetVisible() {
         System.out.println("setVisible");
         boolean visible = true;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         instance.setVisible(visible);
-       assertEquals(visible,instance.isVisible());
+        assertEquals(visible,instance.isVisible());
     }
 
     /**
@@ -63,10 +60,11 @@ public class CanvasTest {
     @Test
     public void testIsVisible() {
         System.out.println("isVisible");
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         boolean expResult = true;
         boolean result = instance.isVisible();
         assertEquals(expResult, result);
+        
     }
 
     /**
@@ -75,8 +73,8 @@ public class CanvasTest {
     @Test
     public void testDraw() {
         System.out.println("draw");
-        Shape shape = new Rectangle(1,2,3,4);
-        Canvas instance = new Canvas("HELLO KITTY");
+        Shape shape = new Rectangle();
+        Canvas instance = new Canvas("Worlde");
         instance.draw(shape);
         assertNotNull(instance);
     }
@@ -87,8 +85,8 @@ public class CanvasTest {
     @Test
     public void testFill() {
         System.out.println("fill");
-        Shape shape = new Rectangle(1,2,3,4);
-        Canvas instance = new Canvas("HELLO KITTY");
+        Shape shape = new Rectangle();
+        Canvas instance = new Canvas("Worlde");
         instance.fill(shape);
         assertNotNull(instance);
     }
@@ -102,7 +100,7 @@ public class CanvasTest {
         int xPos = 0;
         int yPos = 0;
         int diameter = 0;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         instance.fillCircle(xPos, yPos, diameter);
         assertNotNull(instance);
     }
@@ -117,7 +115,7 @@ public class CanvasTest {
         int yPos = 0;
         int width = 0;
         int height = 0;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         instance.fillRectangle(xPos, yPos, width, height);
         assertNotNull(instance);
     }
@@ -128,7 +126,7 @@ public class CanvasTest {
     @Test
     public void testErase_0args() {
         System.out.println("erase");
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         instance.erase();
         assertNotNull(instance);
     }
@@ -142,7 +140,7 @@ public class CanvasTest {
         int xPos = 0;
         int yPos = 0;
         int diameter = 0;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         instance.eraseCircle(xPos, yPos, diameter);
         assertNotNull(instance);
     }
@@ -157,10 +155,9 @@ public class CanvasTest {
         int yPos = 0;
         int width = 0;
         int height = 0;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         instance.eraseRectangle(xPos, yPos, width, height);
         assertNotNull(instance);
-        
     }
 
     /**
@@ -169,8 +166,8 @@ public class CanvasTest {
     @Test
     public void testErase_Shape() {
         System.out.println("erase");
-        Shape shape = new Rectangle(1,2,3,4);
-        Canvas instance = new Canvas("HELLO KITTY");
+        Shape shape = new Rectangle();
+        Canvas instance = new Canvas("Worlde");
         instance.erase(shape);
         assertNotNull(instance);
     }
@@ -181,8 +178,8 @@ public class CanvasTest {
     @Test
     public void testEraseOutline() {
         System.out.println("eraseOutline");
-        Shape shape = new Rectangle(1,2,3,4);
-        Canvas instance = new Canvas("HELLO KITTY");
+        Shape shape = new Rectangle();
+        Canvas instance = new Canvas("Worlde");
         instance.eraseOutline(shape);
         assertNotNull(instance);
     }
@@ -196,11 +193,11 @@ public class CanvasTest {
         Image image = null;
         int x = 0;
         int y = 0;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         boolean expResult = true;
         boolean result = instance.drawImage(image, x, y);
         assertEquals(expResult, result);
-       
+      
     }
 
     /**
@@ -212,7 +209,7 @@ public class CanvasTest {
         String text = "";
         int x = 0;
         int y = 0;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         instance.drawString(text, x, y);
         assertNotNull(instance);
     }
@@ -226,7 +223,7 @@ public class CanvasTest {
         String text = "";
         int x = 0;
         int y = 0;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Canvas instance = new Canvas("Worlde");
         instance.eraseString(text, x, y);
         assertNotNull(instance);
     }
@@ -237,11 +234,11 @@ public class CanvasTest {
     @Test
     public void testDrawLine() {
         System.out.println("drawLine");
-        int x1 = 1;
-        int y1 = 2;
-        int x2 = 3;
-        int y2 = 4;
-        Canvas instance = new Canvas("HELLO KITTY");
+        int x1 = 0;
+        int y1 = 0;
+        int x2 = 0;
+        int y2 = 0;
+        Canvas instance = new Canvas("Worlde");
         instance.drawLine(x1, y1, x2, y2);
         assertNotNull(instance);
     }
@@ -252,10 +249,10 @@ public class CanvasTest {
     @Test
     public void testSetForegroundColor() {
         System.out.println("setForegroundColor");
-        Color newColor = Color.BLACK;
-        Canvas instance = new Canvas("HELLO KITTY");
+        Color newColor = Color.red;
+        Canvas instance = new Canvas("Worlde");
         instance.setForegroundColor(newColor);
-        assertEquals(newColor,instance.getForegroundColor());
+       assertEquals(newColor,instance.getForegroundColor());
     }
 
     /**
@@ -264,11 +261,12 @@ public class CanvasTest {
     @Test
     public void testGetForegroundColor() {
         System.out.println("getForegroundColor");
-        Canvas instance = new Canvas("HELLO WORLD");
-        instance.setForegroundColor(Color.yellow);
+        Canvas instance = new Canvas("Worlde");
+        Color expResult = Color.red;
+        instance.setForegroundColor(expResult);
         Color result = instance.getForegroundColor();
-        assertEquals(Color.YELLOW, result);
-     
+        assertEquals(expResult, result);
+      
     }
 
     /**
@@ -277,10 +275,10 @@ public class CanvasTest {
     @Test
     public void testSetBackgroundColor() {
         System.out.println("setBackgroundColor");
-        Color newColor = Color.YELLOW;
-        Canvas instance = new Canvas("HELLO WORLD");
+        Color newColor = Color.red;
+        Canvas instance = new Canvas("Worlde");
         instance.setBackgroundColor(newColor);
-       assertEquals(newColor,instance.getBackgroundColor());
+        assertEquals(newColor,instance.getBackgroundColor());
     }
 
     /**
@@ -289,10 +287,11 @@ public class CanvasTest {
     @Test
     public void testGetBackgroundColor() {
         System.out.println("getBackgroundColor");
-        Canvas instance = new Canvas("HELLO WORLD");
-        instance.setBackgroundColor(Color.yellow);
+        Canvas instance = new Canvas("Worlde");
+        Color expResult = Color.red;
+        instance.setBackgroundColor(Color.red);
         Color result = instance.getBackgroundColor();
-        assertEquals(Color.YELLOW, result);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -302,9 +301,9 @@ public class CanvasTest {
     public void testSetFont() {
         System.out.println("setFont");
         Font newFont = new Font("Tahoma",Font.CENTER_BASELINE,12);
-        Canvas instance = new Canvas("HELLO WORLD");
+        Canvas instance = new Canvas("Worlde");
         instance.setFont(newFont);
-      assertEquals(newFont,instance.getFont());
+        assertEquals(newFont,instance.getFont());
     }
 
     /**
@@ -313,11 +312,11 @@ public class CanvasTest {
     @Test
     public void testGetFont() {
         System.out.println("getFont");
-        Canvas instance = new Canvas("HELLO WORLD");
+        Canvas instance = new Canvas("Wordle");
         Font expResult = new Font("Tahoma",Font.CENTER_BASELINE,12);
+        instance.setFont(expResult);
         Font result = instance.getFont();
-        assertNotEquals(expResult, result);
-       
+        assertEquals(expResult, result);
     }
 
     /**
@@ -326,12 +325,12 @@ public class CanvasTest {
     @Test
     public void testSetSize() {
         System.out.println("setSize");
-        int width = 25;
-        int height = 25;
-        Canvas instance = new Canvas("HELLO WORLD");
+        int width = 50;
+        int height = 50;
+        Canvas instance = new Canvas("Wordle");
         instance.setSize(width, height);
-       assertEquals(instance.getSize(),new Dimension(120,25));
-       
+        Dimension expResult = new Dimension(120,50);
+        assertEquals(expResult,instance.getSize());
     }
 
     /**
@@ -340,11 +339,10 @@ public class CanvasTest {
     @Test
     public void testGetSize() {
         System.out.println("getSize");
-        Canvas instance = new Canvas("HELLO WORLD");
-        instance.setSize(25, 25);
+        Canvas instance = new Canvas("Worlde",50,50);
+        Dimension expResult = new Dimension(120,50);
         Dimension result = instance.getSize();
-        assertEquals(new Dimension(120,25), result);
-       
+        assertEquals(expResult, result);
     }
 
     /**
@@ -353,8 +351,8 @@ public class CanvasTest {
     @Test
     public void testWait() {
         System.out.println("wait");
-        int milliseconds = 10;
-        Canvas instance = new Canvas("HELLO WORLD");
+        int milliseconds = 0;
+        Canvas instance = new Canvas("Worlde");
         instance.wait(milliseconds);
         assertNotNull(instance);
     }

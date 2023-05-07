@@ -4,9 +4,11 @@
  */
 package wordle;
 
+import java.awt.Color;
 import wordle.consola.TableroConsola;
 import wordle.consola.TecladoConsola;
 import wordle.holografico.TableroHolografico;
+import wordle.holografico.TecladoHolografico;
 import wordle.interfaces.ITablero;
 import wordle.interfaces.ITeclado;
 
@@ -21,10 +23,12 @@ public class Wordle {
      * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
-       ITablero tablero = new TableroHolografico();
-       ITeclado teclado = new TecladoConsola();
+       Canvas espacio=new Canvas("Wordle",500,500,Color.WHITE);
+       ITablero tablero = new TableroHolografico(espacio);
+       ITeclado teclado = new TecladoHolografico(espacio);
        JuegoWordle juego = new JuegoWordle(tablero, teclado,6);//representa el inicio del juego
-      juego.jugar();
+     juego.jugar();
+        //System.out.println(teclado.getIntento());
     }
     
 }

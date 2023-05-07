@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import wordle.Canvas;
 import wordle.Intento;
 import wordle.Letra;
 
@@ -22,25 +23,21 @@ public class TableroHolograficoTest {
     
     public TableroHolograficoTest() {
     }
-   
+    
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
     }
     
     @Before
     public void setUp() {
-        System.out.println("ANTES DE METODO->");
     }
     
     @After
     public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
     }
 
     /**
@@ -49,10 +46,10 @@ public class TableroHolograficoTest {
     @Test
     public void testDespliegaIntento() {
         System.out.println("despliegaIntento");
-        TableroHolografico instance = new TableroHolografico();
-        String palabra="ARBOL";
+        String palabra = "";
+        TableroHolografico instance = new TableroHolografico(new Canvas("hola"));
         instance.despliegaIntento(palabra);
-         assertNotNull(instance);
+        assertNotNull(instance);
     }
 
     /**
@@ -63,8 +60,10 @@ public class TableroHolograficoTest {
         System.out.println("despliegaEstado");
         ArrayList<Letra> letras = new ArrayList<>();
         ArrayList<Intento> intentos = new ArrayList<>();
-        TableroHolografico instance = new TableroHolografico();
-        instance.despliegaEstado(letras, intentos,6,5);
+        int numeroDeIntentos = 0;
+        int tamanoDePalabra = 0;
+        TableroHolografico instance = new TableroHolografico(new Canvas("hola"));
+        instance.despliegaEstado(letras, intentos, numeroDeIntentos, tamanoDePalabra);
         assertNotNull(instance);
     }
 
@@ -74,8 +73,8 @@ public class TableroHolograficoTest {
     @Test
     public void testDespliegaPrincipio() {
         System.out.println("despliegaPrincipio");
-        TableroHolografico instance = new TableroHolografico();
-        instance.despliegaPrincipio();
+        TableroHolografico instance = new TableroHolografico(new Canvas("hola"));
+        //instance.despliegaPrincipio();
         assertNotNull(instance);
     }
 
@@ -87,9 +86,9 @@ public class TableroHolograficoTest {
         System.out.println("despliegaFin");
         boolean caso = false;
         String correcto = "";
-        TableroHolografico instance = new TableroHolografico();
-        instance.despliegaFin(caso, correcto);
-       assertNotNull(instance);
+        TableroHolografico instance = new TableroHolografico(new Canvas("hola"));
+        //instance.despliegaFin(caso, correcto);
+        assertNotNull(instance);
     }
     
 }

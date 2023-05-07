@@ -4,10 +4,19 @@
  */
 package wordle.interfaces;
 
+import java.util.ArrayList;
+import wordle.Letra;
+
 /**
  *
  * @author molguin
  */
 public interface ITeclado {// inteface para la lectura
-    public String getIntento();
+
+    /**
+     *
+     * @param qwerty
+     * @return
+     */
+    public String getIntento(ArrayList<Letra> qwerty);
 }

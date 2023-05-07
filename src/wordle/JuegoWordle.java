@@ -39,7 +39,6 @@ public class JuegoWordle {
     public void jugar(){
         boolean seGano=false;
         tablero.despliegaPrincipio();
-        teclado.getIntento();
         String correcto=dicc.darPalabraAleatoria();
        // System.out.println(correcto);  // es para probar el juego
         Intento.setPalabraCorrecta(correcto);
@@ -60,7 +59,7 @@ public class JuegoWordle {
     
     Intento deRonda;
     do{
-    deRonda=new Intento(teclado.getIntento());
+    deRonda=new Intento(teclado.getIntento(qwerty));
     if(!verExiste(dicc,deRonda)) System.out.println("ERROR: NO EXISTE PALABRA");
     }while(!verExiste(dicc,deRonda));//sigue pidiendo si no esta la palabra en dicc
     actualizarQwerty(deRonda);

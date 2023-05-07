@@ -38,6 +38,10 @@ public class Letra {
     return letra;    
     }
     
+    public String getLetraString()
+    {
+    return ""+letra+"";
+    }
     /**
      * setter para los signos de la letra
      * @param signo_antes

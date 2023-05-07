@@ -21,36 +21,32 @@ public class LetraTest {
     public LetraTest() {
     }
     
-      @BeforeClass
+    @BeforeClass
     public static void setUpClass() {
-        System.out.println("ANTES DE CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-DESPUES DE CLASE");
     }
     
     @Before
     public void setUp() {
-        System.out.println("ANTES DE METODO->");
     }
     
     @After
     public void tearDown() {
-        System.out.println("<-DESPUES DE METODO");
     }
+
     /**
      * Test of SetLetra method, of class Letra.
      */
     @Test
     public void testSetLetra() {
         System.out.println("SetLetra");
-        Character letra;
-        letra = 'A';
-        Letra instance = new Letra('A','<','>');
+        Character letra = 'a';
+        Letra instance = new Letra('b','<','>');
         instance.SetLetra(letra);
-        assertEquals(instance.getLetra(),letra);
+        assertEquals(letra,instance.getLetra());
     }
 
     /**
@@ -59,8 +55,8 @@ public class LetraTest {
     @Test
     public void testGetLetra() {
         System.out.println("getLetra");
-        Letra instance = new Letra('A','<','>'); 
-        Character expResult = 'A';
+        Letra instance = new Letra('b','<','>');
+        Character expResult = 'b';
         Character result = instance.getLetra();
         assertEquals(expResult, result);
        
@@ -74,10 +70,9 @@ public class LetraTest {
         System.out.println("setSignos");
         Character signo_antes = '<';
         Character signo_despues = '>';
-        Letra instance =new Letra(null,null,null);
+        Letra instance = new Letra('b','(',')');
         instance.setSignos(signo_antes, signo_despues);
-        assertTrue(Objects.equals(instance.getSignoAntes(), signo_antes) && 
-                Objects.equals(instance.getSignoDespues(), signo_despues));
+        assertEquals(instance.getSignoAntes(),signo_antes);
     }
 
     /**
@@ -86,8 +81,8 @@ public class LetraTest {
     @Test
     public void testGetSignoAntes() {
         System.out.println("getSignoAntes");
-        Letra instance = new Letra('A','<','>'); 
-        Character expResult = '<';
+        Letra instance = new Letra('b','(',')');
+        Character expResult = '(';
         Character result = instance.getSignoAntes();
         assertEquals(expResult, result);
     }
@@ -98,10 +93,11 @@ public class LetraTest {
     @Test
     public void testGetSignoDespues() {
         System.out.println("getSignoDespues");
-        Letra instance = new Letra('A','<','>'); 
-        Character expResult = '>';
+        Letra instance = new Letra('b','(',')');
+        Character expResult = ')';
         Character result = instance.getSignoDespues();
         assertEquals(expResult, result);
+      
     }
 
     /**
@@ -110,11 +106,11 @@ public class LetraTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Letra instance = new Letra('A','<','>'); 
-        String expResult = "<A>";
+        Letra instance = new Letra('b','(',')');
+        String expResult = "(b)";
         String result = instance.toString();
         assertEquals(expResult, result);
+       
     }
-
     
 }

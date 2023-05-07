@@ -10,6 +10,7 @@ import java.awt.Font;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 import wordle.Canvas;
 import wordle.Intento;
 import wordle.Letra;
@@ -20,8 +21,13 @@ import wordle.interfaces.ITablero;
  * @author molguin
  */
 public class TableroHolografico implements ITablero{
-     Canvas p = new Canvas("Wordle",500,500,Color.WHITE);
-     final int numeroDeLetrasQueCaben=10;
+     Canvas p;
+     Scanner seguir = new Scanner(System.in); 
+     public TableroHolografico(Canvas p)
+     {
+     this.p=p;   
+     }
+    
      
     @Override
     public void despliegaIntento(String palabra) {
@@ -48,9 +54,10 @@ public class TableroHolografico implements ITablero{
               {
               switch (letra.getSignoAntes()) 
               {
-               case '(' -> p.setForegroundColor(Color.green);
+                case '(' -> p.setForegroundColor(Color.green);
                case '[' -> p.setForegroundColor(Color.yellow);
-               default -> p.setForegroundColor(Color.gray);
+               case '<' -> p.setForegroundColor(Color.gray);
+               default -> p.setForegroundColor(Color.white);
               }
               p.fillRectangle(xPosicionador,yPosicionador,30,30);
               p.setForegroundColor(Color.BLACK);
@@ -63,37 +70,12 @@ public class TableroHolografico implements ITablero{
             {
              for(int j=0;j<tamanoDePalabra;j++)
              {
-              p.draw(new Rectangle(xPosicionador,yPosicionador,30,30));
+              p.draw(new Rectangle(xPosicionador,yPosicionador,40,40));
               xPosicionador+=45;
              }
              yPosicionador+=45;
             }
          }
-         xPosicionador=30;//posicion ininial para el qwerty
-         yPosicionador=350;
-         int contadorDeLetra=0;// contador para saber cuando brincar a la siguiente para presentar el resto del qwerty
-         for(Letra letra:letras)
-        {
-           
-           switch (letra.getSignoAntes()) 
-              {
-               case '(' -> p.setForegroundColor(Color.green);
-               case '[' -> p.setForegroundColor(Color.yellow);
-               case '<' -> p.setForegroundColor(Color.gray);
-               default -> p.setForegroundColor(Color.white);
-              }
-              p.fillRectangle(xPosicionador,yPosicionador,30,30);
-              p.setForegroundColor(Color.BLACK);
-              p.drawString(letra.getLetra().toString(), xPosicionador+5, yPosicionador+25);
-              xPosicionador+=45;
-              contadorDeLetra+=1;
-          if(contadorDeLetra==numeroDeLetrasQueCaben)//cuando se cumple, se recorre el despliegue del qwerty
-          {
-              yPosicionador+=45;
-              xPosicionador=30;
-              contadorDeLetra=0;
-          }
-        }
       p.setVisible(true);
     }
 
@@ -127,7 +109,7 @@ public class TableroHolografico implements ITablero{
        
        p.setFont(new Font("Tahoma",Font.CENTER_BASELINE,25));
        p.drawString("HAZ CLICK PARA EMPEZAR",90,300);
-      
+    seguir.nextLine();
     }
 
     @Override
@@ -139,8 +121,9 @@ public class TableroHolografico implements ITablero{
        }     
        p.setFont(new Font("Tahoma",Font.CENTER_BASELINE,12));
        p.drawString("CLICK PARA TERMINAR",170,35);
-       p.wait(10);
+    seguir.nextLine();
        p.setVisible(false);
+       p.erase();
     }
 
 }
